@@ -18,7 +18,6 @@ class HomeBanner extends Component {
           // nextMargin
         >
           {Array.isArray(data) && data.map(item => {
-            console.log(item)
             return (
               <SwiperItem
                 key={item.key}

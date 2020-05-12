@@ -9,4 +9,8 @@ function scalePx2dp (uiElementPx) {
   return uiElementPx * deviceWidthDp / uiWidthPx
 }
 
-export default StyleSheet.create({})
+export default StyleSheet.create({
+  "taro_page": {
+    "height": "100%"
+  }
+})

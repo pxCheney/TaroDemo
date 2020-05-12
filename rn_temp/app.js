@@ -133,21 +133,21 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var assetsImagesTabbarProfileSelectedPng = require('././assets/Images/tabbar/profile_selected.png');
+var assetsTabbarProfileSelectedPng = require('././assets/tabbar/profile_selected.png');
 
-var assetsImagesTabbarProfilePng = require('././assets//Images/tabbar/profile.png');
+var assetsTabbarProfilePng = require('././assets/tabbar/profile.png');
 
-var assetsImagesTabbarAcademySelectedPng = require('././assets/Images/tabbar/academy_selected.png');
+var assetsTabbarAcademySelectedPng = require('././assets/tabbar/academy_selected.png');
 
-var assetsImagesTabbarAcademyPng = require('././assets//Images/tabbar/academy.png');
+var assetsTabbarAcademyPng = require('././assets/tabbar/academy.png');
 
-var assetsImagesTabbarConnectSelectedPng = require('././assets/Images/tabbar/connect_selected.png');
+var assetsTabbarConnectSelectedPng = require('././assets/tabbar/connect_selected.png');
 
-var assetsImagesTabbarConnectPng = require('././assets/Images/tabbar/connect.png');
+var assetsTabbarConnectPng = require('././assets/tabbar/connect.png');
 
-var assetsImagesTabbarHomtSelectedPng = require('././assets/Images/tabbar/homt_selected.png');
+var assetsTabbarHomtSelectedPng = require('././assets/tabbar/homt_selected.png');
 
-var assetsImagesTabbarHomePng = require('././assets/Images/tabbar/home.png');
+var assetsTabbarHomePng = require('././assets/tabbar/home.png');
 
 var pagesProfileIndex = require('./pages/profile/index').default;
 
@@ -194,23 +194,23 @@ var App = function (_Component) {
         borderStyle: 'black',
         list: [{
           pagePath: 'pages/home/index',
-          iconPath: assetsImagesTabbarHomePng,
-          selectedIconPath: assetsImagesTabbarHomtSelectedPng,
+          iconPath: assetsTabbarHomePng,
+          selectedIconPath: assetsTabbarHomtSelectedPng,
           text: '首页'
         }, {
           pagePath: 'pages/connection/index',
-          iconPath: assetsImagesTabbarConnectPng,
-          selectedIconPath: assetsImagesTabbarConnectSelectedPng,
+          iconPath: assetsTabbarConnectPng,
+          selectedIconPath: assetsTabbarConnectSelectedPng,
           text: '好友'
         }, {
           pagePath: 'pages/academy/index',
-          iconPath: assetsImagesTabbarAcademyPng,
-          selectedIconPath: assetsImagesTabbarAcademySelectedPng,
+          iconPath: assetsTabbarAcademyPng,
+          selectedIconPath: assetsTabbarAcademySelectedPng,
           text: '学院'
         }, {
           pagePath: 'pages/profile/index',
-          iconPath: assetsImagesTabbarProfilePng,
-          selectedIconPath: assetsImagesTabbarProfileSelectedPng,
+          iconPath: assetsTabbarProfilePng,
+          selectedIconPath: assetsTabbarProfileSelectedPng,
           text: '我的'
         }]
       }
@@ -280,6 +280,7 @@ exports.default = App;
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
+module.exports = {"taro_page":"taro_page"};
 
 /***/ }),
 

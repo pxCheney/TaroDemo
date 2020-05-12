@@ -28,7 +28,7 @@ class Home extends Component {
         500
       )
     } catch (error) {
-      console.log('ERROR--', error)
+      console.log('PXhome-index-ERROR--', error)
     }
   }
 

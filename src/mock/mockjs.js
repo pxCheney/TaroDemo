@@ -33,6 +33,18 @@ app.use('/Home/homeBanner', function (req, res) {
   )
 })
 
+app.use('/Feed/GetFeedList', function (req, res) {
+  res.json(
+    Mock.mock({
+      'status': 200,
+      'dataSource|1-10': [{
+        'key|+1': 1,
+        'mockTitle|1':[''],
+      }]
+    })
+  )
+})
+
 app.listen('8888', () => {
   console.log('8888 start')
 })

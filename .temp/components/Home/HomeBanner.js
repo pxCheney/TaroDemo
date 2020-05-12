@@ -13,7 +13,6 @@ class HomeBanner extends Taro.Component {
       // nextMargin
       >
           {Array.isArray(data) && data.map(item => {
-          console.log(item);
           return <SwiperItem key={item.key} className="home-banner__swiper-item">
                 <Image className="home-banner__swiper-item-img" src={item.Image} />
               </SwiperItem>;
