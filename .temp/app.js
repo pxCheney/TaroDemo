@@ -46,23 +46,23 @@ class App extends Component {
       borderStyle: 'black',
       list: [{
         pagePath: "/pages/home/index",
-        iconPath: require("././assets/Images/tabbar/home.png"),
-        selectedIconPath: require("././assets/Images/tabbar/homt_selected.png"),
+        iconPath: require("././assets/tabbar/home.png"),
+        selectedIconPath: require("././assets/tabbar/homt_selected.png"),
         text: '首页'
       }, {
         pagePath: "/pages/connection/index",
-        iconPath: require("././assets/Images/tabbar/connect.png"),
-        selectedIconPath: require("././assets/Images/tabbar/connect_selected.png"),
+        iconPath: require("././assets/tabbar/connect.png"),
+        selectedIconPath: require("././assets/tabbar/connect_selected.png"),
         text: '好友'
       }, {
         pagePath: "/pages/academy/index",
-        iconPath: require("././assets//Images/tabbar/academy.png"),
-        selectedIconPath: require("././assets/Images/tabbar/academy_selected.png"),
+        iconPath: require("././assets/tabbar/academy.png"),
+        selectedIconPath: require("././assets/tabbar/academy_selected.png"),
         text: '学院'
       }, {
         pagePath: "/pages/profile/index",
-        iconPath: require("././assets//Images/tabbar/profile.png"),
-        selectedIconPath: require("././assets/Images/tabbar/profile_selected.png"),
+        iconPath: require("././assets/tabbar/profile.png"),
+        selectedIconPath: require("././assets/tabbar/profile_selected.png"),
         text: '我的'
       }],
       mode: "hash",
@@ -82,7 +82,7 @@ class App extends Component {
       navigationBarTitleText: '医者无界',
       navigationBarTextStyle: 'black'
     },
-    tabBar: { color: "#a6a6a6", selectedColor: "#07BFE3", backgroundColor: "white", borderStyle: 'black', list: [{ pagePath: "/pages/home/index", iconPath: require("././assets/Images/tabbar/home.png"), selectedIconPath: require("././assets/Images/tabbar/homt_selected.png"), text: '首页' }, { pagePath: "/pages/connection/index", iconPath: require("././assets/Images/tabbar/connect.png"), selectedIconPath: require("././assets/Images/tabbar/connect_selected.png"), text: '好友' }, { pagePath: "/pages/academy/index", iconPath: require("././assets//Images/tabbar/academy.png"), selectedIconPath: require("././assets/Images/tabbar/academy_selected.png"), text: '学院' }, { pagePath: "/pages/profile/index", iconPath: require("././assets//Images/tabbar/profile.png"), selectedIconPath: require("././assets/Images/tabbar/profile_selected.png"), text: '我的' }], mode: "hash",
+    tabBar: { color: "#a6a6a6", selectedColor: "#07BFE3", backgroundColor: "white", borderStyle: 'black', list: [{ pagePath: "/pages/home/index", iconPath: require("././assets/tabbar/home.png"), selectedIconPath: require("././assets/tabbar/homt_selected.png"), text: '首页' }, { pagePath: "/pages/connection/index", iconPath: require("././assets/tabbar/connect.png"), selectedIconPath: require("././assets/tabbar/connect_selected.png"), text: '好友' }, { pagePath: "/pages/academy/index", iconPath: require("././assets/tabbar/academy.png"), selectedIconPath: require("././assets/tabbar/academy_selected.png"), text: '学院' }, { pagePath: "/pages/profile/index", iconPath: require("././assets/tabbar/profile.png"), selectedIconPath: require("././assets/tabbar/profile_selected.png"), text: '我的' }], mode: "hash",
       basename: "/",
       customRoutes: {}
     }

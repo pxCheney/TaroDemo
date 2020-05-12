@@ -40,23 +40,23 @@ class App extends Component {
       list: [
         {
           pagePath: 'pages/home/index',
-          iconPath: './assets/Images/tabbar/home.png',
-          selectedIconPath: './assets/Images/tabbar/homt_selected.png',
+          iconPath: './assets/tabbar/home.png',
+          selectedIconPath: './assets/tabbar/homt_selected.png',
           text: '首页'
         }, {
           pagePath: 'pages/connection/index',
-          iconPath: './assets/Images/tabbar/connect.png',
-          selectedIconPath: './assets/Images/tabbar/connect_selected.png',
+          iconPath: './assets/tabbar/connect.png',
+          selectedIconPath: './assets/tabbar/connect_selected.png',
           text: '好友'
         }, {
           pagePath: 'pages/academy/index',
-          iconPath: './assets//Images/tabbar/academy.png',
-          selectedIconPath: './assets/Images/tabbar/academy_selected.png',
+          iconPath: './assets/tabbar/academy.png',
+          selectedIconPath: './assets/tabbar/academy_selected.png',
           text: '学院'
         }, {
           pagePath: 'pages/profile/index',
-          iconPath: './assets//Images/tabbar/profile.png',
-          selectedIconPath: './assets/Images/tabbar/profile_selected.png',
+          iconPath: './assets/tabbar/profile.png',
+          selectedIconPath: './assets/tabbar/profile_selected.png',
           text: '我的'
         }
       ]
