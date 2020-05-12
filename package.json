@@ -24,7 +24,8 @@
     "dev:h5": "npm run build:h5 -- --watch",
     "dev:rn": "npm run build:rn -- --watch",
     "dev:qq": "npm run build:qq -- --watch",
-    "dev:quickapp": "npm run build:quickapp -- --watch"
+    "dev:quickapp": "npm run build:quickapp -- --watch",
+    "dev:mock": "nodemon ./src/mock/mockjs"
   },
   "author": "",
   "license": "MIT",
@@ -48,6 +49,7 @@
     "@tarojs/taro-tt": "2.2.3",
     "@tarojs/taro-weapp": "2.2.3",
     "babel-runtime": "^6.26.0",
+    "mockjs": "^1.1.0",
     "nerv-devtools": "^1.5.5",
     "nervjs": "^1.5.5",
     "react": "16.8.0",
