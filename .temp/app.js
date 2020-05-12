@@ -1,3 +1,4 @@
+/* eslint-disable react/sort-comp */
 import Taro, { Component } from "@tarojs/taro-h5";
 import { Provider } from "@tarojs/redux-h5";
 
@@ -12,6 +13,7 @@ import './app.scss';
 // }
 
 import Nerv from 'nervjs';
+import { View, Tabbar, TabbarContainer, TabbarPanel } from '@tarojs/components';
 import { Router, createHistory, mountApis } from '@tarojs/router';
 Taro.initPxTransform({
   "designWidth": 750,
@@ -26,7 +28,7 @@ const _taroHistory = createHistory({
   mode: "hash",
   basename: "/",
   customRoutes: {},
-  firstPagePath: "/pages/index/index"
+  firstPagePath: "/pages/home/index"
 });
 
 mountApis({
@@ -36,14 +38,53 @@ mountApis({
 const store = configStore();
 
 class App extends Component {
+  state = {
+    __tabs: {
+      color: "#a6a6a6",
+      selectedColor: "#07BFE3",
+      backgroundColor: "white",
+      borderStyle: 'black',
+      list: [{
+        pagePath: "/pages/home/index",
+        iconPath: require("././assets/Images/tabbar/home.png"),
+        selectedIconPath: require("././assets/Images/tabbar/homt_selected.png"),
+        text: '首页'
+      }, {
+        pagePath: "/pages/connection/index",
+        iconPath: require("././assets/Images/tabbar/connect.png"),
+        selectedIconPath: require("././assets/Images/tabbar/connect_selected.png"),
+        text: '好友'
+      }, {
+        pagePath: "/pages/academy/index",
+        iconPath: require("././assets//Images/tabbar/academy.png"),
+        selectedIconPath: require("././assets/Images/tabbar/academy_selected.png"),
+        text: '学院'
+      }, {
+        pagePath: "/pages/profile/index",
+        iconPath: require("././assets//Images/tabbar/profile.png"),
+        selectedIconPath: require("././assets/Images/tabbar/profile_selected.png"),
+        text: '我的'
+      }],
+      mode: "hash",
+      basename: "/",
+      customRoutes: {}
+    }
+  };
+
 
   config = {
-    pages: ["/pages/index/index"],
+    pages: [
+    // 'pages/index/index',
+    "/pages/home/index", "/pages/connection/index", "/pages/academy/index", "/pages/profile/index"],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
-      navigationBarTitleText: 'WeChat',
+      navigationBarTitleText: '医者无界',
       navigationBarTextStyle: 'black'
+    },
+    tabBar: { color: "#a6a6a6", selectedColor: "#07BFE3", backgroundColor: "white", borderStyle: 'black', list: [{ pagePath: "/pages/home/index", iconPath: require("././assets/Images/tabbar/home.png"), selectedIconPath: require("././assets/Images/tabbar/homt_selected.png"), text: '首页' }, { pagePath: "/pages/connection/index", iconPath: require("././assets/Images/tabbar/connect.png"), selectedIconPath: require("././assets/Images/tabbar/connect_selected.png"), text: '好友' }, { pagePath: "/pages/academy/index", iconPath: require("././assets//Images/tabbar/academy.png"), selectedIconPath: require("././assets/Images/tabbar/academy_selected.png"), text: '学院' }, { pagePath: "/pages/profile/index", iconPath: require("././assets//Images/tabbar/profile.png"), selectedIconPath: require("././assets/Images/tabbar/profile_selected.png"), text: '我的' }], mode: "hash",
+      basename: "/",
+      customRoutes: {}
     }
   };
 
@@ -62,12 +103,31 @@ class App extends Component {
   render() {
     return <Provider store={store}>
           
+        <TabbarContainer>
+          
+        <TabbarPanel>
+          
                 <Router mode={"hash"} history={_taroHistory} routes={[{
-        path: '/pages/index/index',
-        componentLoader: () => import( /* webpackChunkName: "index_index" */'./pages/index/index'),
-        isIndex: true
-      }]} customRoutes={{}} />
+            path: '/pages/home/index',
+            componentLoader: () => import( /* webpackChunkName: "home_index" */'./pages/home/index'),
+            isIndex: true
+          }, {
+            path: '/pages/connection/index',
+            componentLoader: () => import( /* webpackChunkName: "connection_index" */'./pages/connection/index'),
+            isIndex: false
+          }, {
+            path: '/pages/academy/index',
+            componentLoader: () => import( /* webpackChunkName: "academy_index" */'./pages/academy/index'),
+            isIndex: false
+          }, {
+            path: '/pages/profile/index',
+            componentLoader: () => import( /* webpackChunkName: "profile_index" */'./pages/profile/index'),
+            isIndex: false
+          }]} tabBar={this.state.__tabs} customRoutes={{}} />
                 
+        </TabbarPanel>
+        <Tabbar conf={this.state.__tabs} homePage="pages/home/index" />
+        </TabbarContainer>
         </Provider>;
   }
 
@@ -78,6 +138,10 @@ class App extends Component {
   constructor(props, context) {
     super(props, context);
     Taro._$app = this;
+  }
+
+  componentWillMount() {
+    Taro.initTabBarApis(this, Taro);
   }
 
 }

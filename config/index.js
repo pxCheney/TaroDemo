@@ -1,6 +1,9 @@
+/* eslint-disable import/no-commonjs */
+const path = require('path')
+
 const config = {
-  projectName: 'TaroDemo',
-  date: '2020-5-12',
+  projectName: 'myApp',
+  date: '2020-5-8',
   designWidth: 750,
   deviceRatio: {
     '640': 2.34 / 2,
@@ -30,6 +33,15 @@ const config = {
     ]
   },
   defineConstants: {
+  },
+  alias: {
+    // '@actions': path.resolve(__dirname, '..', 'src/actions'),
+    '@ASSETS': path.resolve(__dirname, '..', 'src/assets'),
+    '@COMPONENTS': path.resolve(__dirname, '..', 'src/components'),
+    '@CONSTANT': path.resolve(__dirname, '..', 'src/constants'),
+    '@UTILS': path.resolve(__dirname, '..', 'src/utils'),
+    '@PAGES': path.resolve(__dirname, '..', 'src/utils'),
+    '@API': path.resolve(__dirname, '..', 'src/services'),
   },
   mini: {
     postcss: {

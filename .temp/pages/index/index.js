@@ -45,11 +45,6 @@ class Index extends Taro.Component {
         <View><Text>Hello, World</Text></View>
       </View>;
   }
-
-  componentDidMount() {
-    super.componentDidMount && super.componentDidMount();
-  }
-
 }
 
 export default Index;

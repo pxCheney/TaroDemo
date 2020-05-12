@@ -82,15 +82,15 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/app.jsx");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/app.js");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/app.jsx":
-/*!*********************!*\
-  !*** ./src/app.jsx ***!
-  \*********************/
+/***/ "./src/app.js":
+/*!********************!*\
+  !*** ./src/app.js ***!
+  \********************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -133,9 +133,32 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var pagesIndexIndex = require('./pages/index/index').default;
+var assetsImagesTabbarProfileSelectedPng = require('././assets/Images/tabbar/profile_selected.png');
+
+var assetsImagesTabbarProfilePng = require('././assets//Images/tabbar/profile.png');
+
+var assetsImagesTabbarAcademySelectedPng = require('././assets/Images/tabbar/academy_selected.png');
+
+var assetsImagesTabbarAcademyPng = require('././assets//Images/tabbar/academy.png');
+
+var assetsImagesTabbarConnectSelectedPng = require('././assets/Images/tabbar/connect_selected.png');
+
+var assetsImagesTabbarConnectPng = require('././assets/Images/tabbar/connect.png');
+
+var assetsImagesTabbarHomtSelectedPng = require('././assets/Images/tabbar/homt_selected.png');
+
+var assetsImagesTabbarHomePng = require('././assets/Images/tabbar/home.png');
+
+var pagesProfileIndex = require('./pages/profile/index').default;
+
+var pagesAcademyIndex = require('./pages/academy/index').default;
+
+var pagesConnectionIndex = require('./pages/connection/index').default;
+
+var pagesHomeIndex = require('./pages/home/index').default;
 
 var Taro = require('@tarojs/taro-rn');
+/* eslint-disable react/sort-comp */
 
 var appStyleSheet = require('./index_styles').default;
 
@@ -157,12 +180,39 @@ var App = function (_Component) {
     var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props, context));
 
     Taro._$app = _this;
-    _this.RootStack = _taroRouterRn2.default.initRouter([['pages/index/index', pagesIndexIndex]], Taro, {
+    _this.RootStack = _taroRouterRn2.default.initRouter([['pages/home/index', pagesHomeIndex], ['pages/connection/index', pagesConnectionIndex], ['pages/academy/index', pagesAcademyIndex], ['pages/profile/index', pagesProfileIndex]], Taro, {
       window: {
         backgroundTextStyle: 'light',
         navigationBarBackgroundColor: '#fff',
-        navigationBarTitleText: 'WeChat',
+        navigationBarTitleText: '医者无界',
         navigationBarTextStyle: 'black'
+      },
+      tabBar: {
+        color: "#a6a6a6",
+        selectedColor: "#07BFE3",
+        backgroundColor: "white",
+        borderStyle: 'black',
+        list: [{
+          pagePath: 'pages/home/index',
+          iconPath: assetsImagesTabbarHomePng,
+          selectedIconPath: assetsImagesTabbarHomtSelectedPng,
+          text: '首页'
+        }, {
+          pagePath: 'pages/connection/index',
+          iconPath: assetsImagesTabbarConnectPng,
+          selectedIconPath: assetsImagesTabbarConnectSelectedPng,
+          text: '好友'
+        }, {
+          pagePath: 'pages/academy/index',
+          iconPath: assetsImagesTabbarAcademyPng,
+          selectedIconPath: assetsImagesTabbarAcademySelectedPng,
+          text: '学院'
+        }, {
+          pagePath: 'pages/profile/index',
+          iconPath: assetsImagesTabbarProfilePng,
+          selectedIconPath: assetsImagesTabbarProfileSelectedPng,
+          text: '我的'
+        }]
       }
     });
     return _this;
