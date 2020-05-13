@@ -37,6 +37,38 @@ export default StyleSheet.create({
     "width": "100%",
     "height": "100%"
   },
+  "src-components-Feed-FeedList__feedList__item--2vm12": {
+    "display": "flex",
+    "flexDirection": "row",
+    "marginTop": scalePx2dp(10)
+  },
+  "src-components-Feed-FeedList__feedList__item-image--2cwYN": {
+    "width": scalePx2dp(50),
+    "height": scalePx2dp(50),
+    "borderRadius": scalePx2dp(25),
+    "marginRight": scalePx2dp(10)
+  },
+  "src-components-Feed-FeedList__feedList__item-right--2Vsju": {
+    "flexGrow": 1,
+    "flexShrink": 1,
+    "flexBasis": 0,
+    "display": "flex",
+    "flexDirection": "column",
+    "backgroundColor": "#eee",
+    "borderWidth": 0,
+    "borderStyle": "solid",
+    "borderColor": "#000000",
+    "borderBottomWidth": scalePx2dp(0.5)
+  },
+  "src-components-Feed-FeedList__feedList__item-right__title--1_LNE": {
+    "fontSize": scalePx2dp(8),
+    "fontWeight": "500",
+    "color": "#f50"
+  },
+  "src-components-Feed-FeedList__feedList__item-right__desc--3i95l": {
+    "width": "100%",
+    "fontSize": scalePx2dp(7)
+  },
   "taro_page": {
     "height": "100%"
   }

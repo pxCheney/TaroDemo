@@ -16,12 +16,7 @@ import Nerv from 'nervjs';
 import { View, Tabbar, TabbarContainer, TabbarPanel } from '@tarojs/components';
 import { Router, createHistory, mountApis } from '@tarojs/router';
 Taro.initPxTransform({
-  "designWidth": 750,
-  "deviceRatio": {
-    "640": 1.17,
-    "750": 1,
-    "828": 0.905
-  }
+  "designWidth": 750
 });
 
 const _taroHistory = createHistory({
@@ -75,7 +70,7 @@ class App extends Component {
   config = {
     pages: [
     // 'pages/index/index',
-    "/pages/home/index", "/pages/connection/index", "/pages/academy/index", "/pages/profile/index"],
+    "/pages/home/index", "/pages/connection/index", "/pages/academy/index", "/pages/profile/index", "/pages/home/feed/FeedDetail"],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
@@ -122,6 +117,10 @@ class App extends Component {
           }, {
             path: '/pages/profile/index',
             componentLoader: () => import( /* webpackChunkName: "profile_index" */'./pages/profile/index'),
+            isIndex: false
+          }, {
+            path: '/pages/home/feed/FeedDetail',
+            componentLoader: () => import( /* webpackChunkName: "home_feed_FeedDetail" */'./pages/home/feed/FeedDetail'),
             isIndex: false
           }]} tabBar={this.state.__tabs} customRoutes={{}} />
                 

@@ -91,6 +91,14 @@ const config = {
           ]
         }
       },
+      pxtransform: {
+        enable: true,
+        config: {
+          platform: 'h5',
+          designWidth: 750,
+          onePxTransform: true,
+        }
+      },
       cssModules: {
         enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
         config: {
@@ -98,6 +106,36 @@ const config = {
           generateScopedName: '[name]__[local]___[hash:base64:5]'
         }
       }
+    }
+  },
+  weapp: {
+    module: {
+      postcss: {
+        autoprefixer: {
+          enable: true,
+          config: {
+            browsers: [
+              'last 3 versions',
+              'Android >= 4.1',
+              'ios >= 8'
+            ]
+          }
+        },
+        pxtransform: {
+          enable: true,
+          config: {
+            platform: 'weapp',
+            designWidth: 375,
+            onePxTransform: true,
+          }
+        },
+      }
+    }
+  },
+  rn: {
+    appJson: {
+      // NOTE taro-native-shell 中默认用的是 taroDemo
+      name: 'taroDemo'
     }
   }
 }

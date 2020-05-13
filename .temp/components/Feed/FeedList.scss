@@ -3,37 +3,33 @@
 .feedList__item {
   display: flex;
   flex-direction: row;
-  // border: 1px solid #ccc;
-  // border-bottom-width: 1;
-  // border-bottom-color: #333;
   margin-top: 20px;
-}
 
-.feedList__item-right-container {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  background-color: #eee;
-  @include border(bottom, 1px, solid, #000000);
-}
+  &-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    margin-right: 20px;
+  }
 
-.feedList__item-title {
-  font-size: 28wpx;
-  font-weight: bold;
-  color: $black;
-}
+  &-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #eee;
+    @include border(bottom, 1px, solid, #000000);
 
-.feedList__item-desc {
-  width: 100%;
-  // @include text-ellipsis();
-  @include lamp-clamp(2);
-  font-size: 20px;
-}
+    &__title {
+      font-size: 16px;
+      font-weight: 500;
+      color: $f50;
+    }
 
-
-.feedList__item-image {
-  width: 100px;
-  height: 100px;
-  border-radius: 50px;
-  margin-right: 16px;
+    &__desc {
+      width: 100%;
+      // @include text-ellipsis();
+      @include lamp-clamp(2);
+      font-size: 14px;
+    }
+  }
 }

@@ -1,6 +1,6 @@
 import Nerv from "nervjs";
 import Taro from "@tarojs/taro-h5";
-import { ScrollView } from '@tarojs/components';
+import { View, Text, ScrollView } from '@tarojs/components';
 import LoadingView from "../../components/LoadingView/index";
 import HomeBanner from "../../components/Home/HomeBanner";
 import FeedList from "../../components/Feed/FeedList";
@@ -44,14 +44,11 @@ class Home extends Taro.Component {
     try {
       const { feedList } = this.state;
       const list = await api.getFeedList({ skip, take: DefaultTake });
-      // console.log('feedList', list)
       setTimeout(() => {
         this.setState({
           feedList: !skip ? list : [...feedList, ...list],
           canLoadMore: feedList.length >= DefaultTake,
           skip
-        }, () => {
-          console.log(skip, list, this.state.feedList);
         });
       }, 500);
     } catch (error) {
@@ -65,6 +62,16 @@ class Home extends Taro.Component {
     this.getFeedList(skip);
   };
 
+  clickItem = () => {
+    console.log('clickItem');
+  };
+
+  renderTitle = () => {
+    return <View>
+        <Text>列表的Title</Text>
+      </View>;
+  };
+
   render() {
     const { loading, bannerData, feedList } = this.state;
     if (loading) {
@@ -72,7 +79,9 @@ class Home extends Taro.Component {
     }
     return <ScrollView scrollY className="feedList" onScrollToLower={this.loadRecommend} style={{ height: getWindowHeight() }}>
         <HomeBanner data={bannerData} />
-        <FeedList feedList={feedList} />
+        <FeedList feedList={feedList} clickItem={this.clickItem}>
+          {this.renderTitle()}
+        </FeedList>
       </ScrollView>;
   }
 

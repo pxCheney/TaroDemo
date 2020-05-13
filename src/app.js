@@ -25,6 +25,7 @@ class App extends Component {
       'pages/connection/index',
       'pages/academy/index',
       'pages/profile/index',
+      'pages/home/feed/FeedDetail'
     ],
     window: {
       backgroundTextStyle: 'light',

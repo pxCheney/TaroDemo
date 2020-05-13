@@ -46,15 +46,12 @@ class Home extends Component {
     try {
       const { feedList } = this.state
       const list = await api.getFeedList({ skip, take: DefaultTake })
-      // console.log('feedList', list)
       setTimeout(
         () => {
           this.setState({
             feedList: !skip ? list : [...feedList, ...list],
             canLoadMore: feedList.length >= DefaultTake,
             skip,
-          }, () => {
-            console.log(skip, list, this.state.feedList)
           })
         },
         500
@@ -70,6 +67,18 @@ class Home extends Component {
     this.getFeedList(skip)
   }
 
+  clickItem = () => {
+    console.log('clickItem')
+  }
+
+  renderTitle = () => {
+    return (
+      <View>
+        <Text>列表的Title</Text>
+      </View>
+    )
+  }
+
   render () {
     const { loading, bannerData, feedList } = this.state
     if (loading) {
@@ -83,7 +92,9 @@ class Home extends Component {
         style={{ height: getWindowHeight() }}
       >
         <HomeBanner data={bannerData} />
-        <FeedList feedList={feedList} />
+        <FeedList feedList={feedList} clickItem={this.clickItem}>
+          {this.renderTitle()}
+        </FeedList>
       </ScrollView>
     )
   }

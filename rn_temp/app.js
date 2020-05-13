@@ -149,6 +149,8 @@ var assetsTabbarHomtSelectedPng = require('././assets/tabbar/homt_selected.png')
 
 var assetsTabbarHomePng = require('././assets/tabbar/home.png');
 
+var pagesHomeFeedFeedDetail = require('./pages/home/feed/FeedDetail').default;
+
 var pagesProfileIndex = require('./pages/profile/index').default;
 
 var pagesAcademyIndex = require('./pages/academy/index').default;
@@ -180,7 +182,7 @@ var App = function (_Component) {
     var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props, context));
 
     Taro._$app = _this;
-    _this.RootStack = _taroRouterRn2.default.initRouter([['pages/home/index', pagesHomeIndex], ['pages/connection/index', pagesConnectionIndex], ['pages/academy/index', pagesAcademyIndex], ['pages/profile/index', pagesProfileIndex]], Taro, {
+    _this.RootStack = _taroRouterRn2.default.initRouter([['pages/home/index', pagesHomeIndex], ['pages/connection/index', pagesConnectionIndex], ['pages/academy/index', pagesAcademyIndex], ['pages/profile/index', pagesProfileIndex], ['pages/home/feed/FeedDetail', pagesHomeFeedFeedDetail]], Taro, {
       window: {
         backgroundTextStyle: 'light',
         navigationBarBackgroundColor: '#fff',
