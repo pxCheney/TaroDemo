@@ -2,6 +2,10 @@ import Taro, { Component } from '@tarojs/taro'
 import { View, Text } from '@tarojs/components'
 
 class Profile extends Component {
+  componentDidMount() {
+    console.log('componentDidMount---Profile')
+  }
+
   render () {
     return (
       <View>

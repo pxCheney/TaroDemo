@@ -26,7 +26,10 @@ class Home extends Component {
 
   getHomeBanner = async () => {
     try {
-      this.setState({ loading: true })
+      // this.setState({ loading: true })
+      Taro.showLoading({
+        title: 'loading'
+      })
       const bannerData = await api.getHomeBanner()
       setTimeout(
         () => {
@@ -34,6 +37,7 @@ class Home extends Component {
             loading: false,
             bannerData
           })
+          Taro.hideLoading()
         },
         500
       )
@@ -74,9 +78,13 @@ class Home extends Component {
   renderTitle = () => {
     return (
       <View>
-        <Text>列表的Title</Text>
+        <Text>列表的Title11</Text>
       </View>
     )
+  }
+
+  onScrollToUpper = () => {
+    console.log('onScrollToUpper')
   }
 
   render () {
@@ -88,8 +96,14 @@ class Home extends Component {
       <ScrollView
         scrollY
         className='feedList'
+        upperThreshold={20}
+        onScrollToUpper={this.onScrollToUpper}
         onScrollToLower={this.loadRecommend}
         style={{ height: getWindowHeight() }}
+        // refresherEnabled
+        // refresherThreshold='45'
+        // refresherDefaultStyle='black'
+        // refresherBackground='#f50'
       >
         <HomeBanner data={bannerData} />
         <FeedList feedList={feedList} clickItem={this.clickItem}>

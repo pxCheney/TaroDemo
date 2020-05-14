@@ -16,7 +16,12 @@ import Nerv from 'nervjs';
 import { View, Tabbar, TabbarContainer, TabbarPanel } from '@tarojs/components';
 import { Router, createHistory, mountApis } from '@tarojs/router';
 Taro.initPxTransform({
-  "designWidth": 750
+  "designWidth": 750,
+  "deviceRatio": {
+    "640": 1.17,
+    "750": 1,
+    "828": 0.905
+  }
 });
 
 const _taroHistory = createHistory({
@@ -68,9 +73,7 @@ class App extends Component {
 
 
   config = {
-    pages: [
-    // 'pages/index/index',
-    "/pages/home/index", "/pages/connection/index", "/pages/academy/index", "/pages/profile/index", "/pages/home/feed/FeedDetail"],
+    pages: ["/pages/home/index", "/pages/connection/index", "/pages/academy/index", "/pages/profile/index", "/pages/home/feed/FeedDetail"],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',

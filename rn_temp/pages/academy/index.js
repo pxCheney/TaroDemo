@@ -131,6 +131,11 @@ var Academy = function (_Component) {
   }
 
   _createClass(Academy, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      console.log('componentDidMount---Academy');
+    }
+  }, {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(

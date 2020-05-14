@@ -103,6 +103,8 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var _class, _temp2;
+
 var _react = __webpack_require__(/*! react */ "react");
 
 var _react2 = _interopRequireDefault(_react);
@@ -110,6 +112,10 @@ var _react2 = _interopRequireDefault(_react);
 var _taroRn = __webpack_require__(/*! @tarojs/taro-rn */ "@tarojs/taro-rn");
 
 var _componentsRn = __webpack_require__(/*! @tarojs/components-rn */ "@tarojs/components-rn");
+
+var _FeedDetail = __webpack_require__(/*! ./FeedDetail.scss */ "./src/pages/home/feed/FeedDetail.scss");
+
+var _FeedDetail2 = _interopRequireDefault(_FeedDetail);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -121,7 +127,11 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var Taro = require('@tarojs/taro-rn');
 
-var FeedDetail = function (_Component) {
+var FeedDetailStyleSheet = require('./index_styles').default;
+
+var _styleSheet = FeedDetailStyleSheet;
+
+var FeedDetail = (_temp2 = _class = function (_Component) {
   _inherits(FeedDetail, _Component);
 
   function FeedDetail() {
@@ -139,36 +149,48 @@ var FeedDetail = function (_Component) {
       Taro.navigateBack({
         message: 'go back'
       }); // this.props.navigation.pop()
+    }, _this.onHandleClick = function () {
+      Taro.navigateTo({
+        url: '/pages/home/feed/FeedDetail?title=' + '再次进入哈哈哈哈哈'
+      });
+    }, _this.onSwitchTabbar = function () {
+      // Taro.navigateTo({
+      //   url: `/pages/connection/index`,
+      // })
+      console.log('PX', Taro.getCurrentPages().length);
+      Taro.switchTab({
+        url: '/pages/home/index'
+      });
+      Taro.switchTab({
+        url: '/pages/connection/index'
+      }); // this.props.navigation.push({url: '/pages/connection/index'})
     }, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(FeedDetail, [{
-    key: 'componentWillMount',
-    value: function componentWillMount() {
-      console.log('componentWillMount');
-    }
-  }, {
     key: 'componentDidMount',
-    value: function componentDidMount() {
-      console.log('componentDidMount');
-    }
-  }, {
-    key: 'componentWillUnmount',
-    value: function componentWillUnmount() {
-      console.log('componentWillUnmount');
-    }
-  }, {
-    key: 'componentDidShow',
-    value: function componentDidShow() {
-      console.log('componentDidShow');
-    }
-  }, {
-    key: 'componentDidHide',
-    value: function componentDidHide() {
-      console.log('componentDidHide');
-    }
+    // componentWillMount () {
+    //   console.log('componentWillMount')
+    // }
+
+    value: function componentDidMount() {} // console.log('componentDidMount')
+    // componentWillUnmount () {
+    //   console.log('componentWillUnmount')
+    // }
+    // componentDidShow () {
+    //   console.log('componentDidShow')
+    // }
+    // componentDidHide () {
+    //   console.log('componentDidHide')
+    // }
+
+
   }, {
     key: 'render',
+    // onStartPullDownRefresh = () => {
+    //   console.log('111')
+    // }
+
     value: function render() {
       return _react2.default.createElement(
         _componentsRn.View,
@@ -180,21 +202,55 @@ var FeedDetail = function (_Component) {
             _componentsRn.Text,
             null,
             '\u70B9\u51FB\u8FD4\u56DE'
+          ),
+          _react2.default.createElement(
+            _componentsRn.Text,
+            null,
+            'FeedDetailId--' + this.$router.params.FeedDetailId
           )
         ),
         _react2.default.createElement(
-          _componentsRn.Text,
-          null,
-          'FeedDetailId--' + this.$router.params.FeedDetailId
+          _componentsRn.View,
+          { onClick: this.onHandleClick },
+          _react2.default.createElement(
+            _componentsRn.Text,
+            { style: _styleSheet[_FeedDetail2.default["click-to-third-page"] || "click-to-third-page"] },
+            '\u70B9\u51FB\u8FDB\u5165\u4E09\u7EA7\u9875\u9762'
+          )
+        ),
+        _react2.default.createElement(
+          _componentsRn.View,
+          { onClick: this.onSwitchTabbar },
+          _react2.default.createElement(
+            _componentsRn.Text,
+            null,
+            '\u70B9\u51FB\u8DF3\u8F6Ctabbar1'
+          )
         )
       );
     }
   }]);
 
   return FeedDetail;
-}(_taroRn.Component);
-
+}(_taroRn.Component), _class.config = {
+  backgroundTextStyle: 'light',
+  navigationBarBackgroundColor: '#fff',
+  navigationBarTitleText: '详情页',
+  navigationBarTextStyle: 'black'
+}, _temp2);
 exports.default = FeedDetail;
+
+/***/ }),
+
+/***/ "./src/pages/home/feed/FeedDetail.scss":
+/*!*********************************************!*\
+  !*** ./src/pages/home/feed/FeedDetail.scss ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+module.exports = {"click-to-third-page":"src-pages-home-feed-FeedDetail__click-to-third-page--1I2iV"};
 
 /***/ }),
 

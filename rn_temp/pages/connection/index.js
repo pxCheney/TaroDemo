@@ -131,6 +131,11 @@ var Connection = function (_Component) {
   }
 
   _createClass(Connection, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      console.log('componentDidMount---connection');
+    }
+  }, {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(

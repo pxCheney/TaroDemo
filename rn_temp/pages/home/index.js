@@ -490,8 +490,9 @@ var Home = function (_Component) {
             case 0:
               _context.prev = 0;
 
-              _this.setState({
-                loading: true
+              // this.setState({ loading: true })
+              Taro.showLoading({
+                title: 'loading'
               });
               _context.next = 4;
               return _index4.default.getHomeBanner();
@@ -504,6 +505,7 @@ var Home = function (_Component) {
                   loading: false,
                   bannerData: bannerData
                 });
+                Taro.hideLoading();
               }, 500);
               _context.next = 11;
               break;
@@ -573,9 +575,11 @@ var Home = function (_Component) {
         _react2.default.createElement(
           _componentsRn.Text,
           null,
-          '\u5217\u8868\u7684Title'
+          '\u5217\u8868\u7684Title11'
         )
       );
+    }, _this.onScrollToUpper = function () {
+      console.log('onScrollToUpper');
     }, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
@@ -600,9 +604,13 @@ var Home = function (_Component) {
 
       return _react2.default.createElement(
         _componentsRn.ScrollView,
-        { scrollY: true, className: 'feedList', onScrollToLower: this.loadRecommend, style: {
+        { scrollY: true, className: 'feedList', upperThreshold: 20, onScrollToUpper: this.onScrollToUpper, onScrollToLower: this.loadRecommend, style: {
             height: (0, _utils.getWindowHeight)()
-          } },
+          } // refresherEnabled
+          // refresherThreshold='45'
+          // refresherDefaultStyle='black'
+          // refresherBackground='#f50'
+        },
         _react2.default.createElement(_HomeBanner2.default, { data: bannerData }),
         _react2.default.createElement(
           _FeedList2.default,

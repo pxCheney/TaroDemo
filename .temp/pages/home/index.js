@@ -1,5 +1,5 @@
 import Nerv from "nervjs";
-import Taro from "@tarojs/taro-h5";
+import Taro, { showLoading as _showLoading, hideLoading as _hideLoading } from "@tarojs/taro-h5";
 import { View, Text, ScrollView } from '@tarojs/components';
 import LoadingView from "../../components/LoadingView/index";
 import HomeBanner from "../../components/Home/HomeBanner";
@@ -27,13 +27,17 @@ class Home extends Taro.Component {
 
   getHomeBanner = async () => {
     try {
-      this.setState({ loading: true });
+      // this.setState({ loading: true })
+      _showLoading({
+        title: 'loading'
+      });
       const bannerData = await api.getHomeBanner();
       setTimeout(() => {
         this.setState({
           loading: false,
           bannerData
         });
+        _hideLoading();
       }, 500);
     } catch (error) {
       console.log('PXhome-index-ERROR--', error);
@@ -68,8 +72,12 @@ class Home extends Taro.Component {
 
   renderTitle = () => {
     return <View>
-        <Text>列表的Title</Text>
+        <Text>列表的Title11</Text>
       </View>;
+  };
+
+  onScrollToUpper = () => {
+    console.log('onScrollToUpper');
   };
 
   render() {
@@ -77,7 +85,12 @@ class Home extends Taro.Component {
     if (loading) {
       return <LoadingView />;
     }
-    return <ScrollView scrollY className="feedList" onScrollToLower={this.loadRecommend} style={{ height: getWindowHeight() }}>
+    return <ScrollView scrollY className="feedList" upperThreshold={20} onScrollToUpper={this.onScrollToUpper} onScrollToLower={this.loadRecommend} style={{ height: getWindowHeight() }}
+    // refresherEnabled
+    // refresherThreshold='45'
+    // refresherDefaultStyle='black'
+    // refresherBackground='#f50'
+    >
         <HomeBanner data={bannerData} />
         <FeedList feedList={feedList} clickItem={this.clickItem}>
           {this.renderTitle()}

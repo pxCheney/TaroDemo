@@ -131,6 +131,11 @@ var Profile = function (_Component) {
   }
 
   _createClass(Profile, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      console.log('componentDidMount---Profile');
+    }
+  }, {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
