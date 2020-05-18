@@ -681,7 +681,7 @@ exports.default = function (url) {
               _context.prev = 10;
               _context.t0 = _context['catch'](2);
 
-              console.error('REQUEST-ERROR:', _context.t0);
+              console.error('PX-REQUEST-ERROR:', _context.t0);
 
             case 13:
             case 'end':

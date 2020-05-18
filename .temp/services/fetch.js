@@ -18,7 +18,7 @@ export default function (url, method = 'GET') {
       const { data: { dataSource } } = response;
       return dataSource;
     } catch (error) {
-      console.error('REQUEST-ERROR:', error);
+      console.error('PX-REQUEST-ERROR:', error);
     }
   };
 }

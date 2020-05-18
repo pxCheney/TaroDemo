@@ -125,9 +125,39 @@ var Connection = function (_Component) {
   _inherits(Connection, _Component);
 
   function Connection() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
     _classCallCheck(this, Connection);
 
-    return _possibleConstructorReturn(this, (Connection.__proto__ || Object.getPrototypeOf(Connection)).apply(this, arguments));
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Connection.__proto__ || Object.getPrototypeOf(Connection)).call.apply(_ref, [this].concat(args))), _this), _this.onHandleActionSheet = function () {
+      Taro.showActionSheet({
+        itemList: ['A', 'B', 'C'],
+        success: function success(res) {
+          console.log(res.tapIndex);
+        },
+        fail: function fail(res) {
+          console.log(res.errMsg);
+        }
+      });
+    }, _this.onHandleModal = function () {
+      Taro.showModal({
+        title: '提示',
+        content: '这是一个模态弹窗',
+        success: function success(res) {
+          if (res.confirm) {
+            console.log('用户点击确定');
+          } else if (res.cancel) {
+            console.log('用户点击取消');
+          }
+        }
+      });
+    }, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(Connection, [{
@@ -145,6 +175,24 @@ var Connection = function (_Component) {
           _componentsRn.Text,
           null,
           'Connection \u597D\u53CB'
+        ),
+        _react2.default.createElement(
+          _componentsRn.View,
+          { onClick: this.onHandleActionSheet },
+          _react2.default.createElement(
+            _componentsRn.Text,
+            null,
+            'Action Sheet'
+          )
+        ),
+        _react2.default.createElement(
+          _componentsRn.View,
+          { onClick: this.onHandleModal },
+          _react2.default.createElement(
+            _componentsRn.Text,
+            null,
+            'Modal'
+          )
         )
       );
     }
