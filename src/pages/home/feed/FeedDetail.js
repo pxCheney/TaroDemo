@@ -12,25 +12,25 @@ class FeedDetail extends Component {
     navigationBarTextStyle: 'black'
   }
 
-  // componentWillMount () {
-  //   console.log('componentWillMount')
-  // }
-
-  componentDidMount () {
-    // console.log('componentDidMount')
+  componentWillMount () {
+    console.log('componentWillMount')
   }
 
-  // componentWillUnmount () {
-  //   console.log('componentWillUnmount')
-  // }
+  componentDidMount () {
+    console.log('componentDidMount')
+  }
 
-  // componentDidShow () {
-  //   console.log('componentDidShow')
-  // }
+  componentWillUnmount () {
+    console.log('componentWillUnmount')
+  }
 
-  // componentDidHide () {
-  //   console.log('componentDidHide')
-  // }
+  componentDidShow () {
+    console.log('componentDidShow')
+  }
+
+  componentDidHide () {
+    console.log('componentDidHide')
+  }
 
 
   onBack = () => {

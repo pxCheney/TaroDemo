@@ -168,23 +168,30 @@ var FeedDetail = (_temp2 = _class = function (_Component) {
   }
 
   _createClass(FeedDetail, [{
+    key: 'componentWillMount',
+    value: function componentWillMount() {
+      console.log('componentWillMount');
+    }
+  }, {
     key: 'componentDidMount',
-    // componentWillMount () {
-    //   console.log('componentWillMount')
-    // }
-
-    value: function componentDidMount() {} // console.log('componentDidMount')
-    // componentWillUnmount () {
-    //   console.log('componentWillUnmount')
-    // }
-    // componentDidShow () {
-    //   console.log('componentDidShow')
-    // }
-    // componentDidHide () {
-    //   console.log('componentDidHide')
-    // }
-
-
+    value: function componentDidMount() {
+      console.log('componentDidMount');
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      console.log('componentWillUnmount');
+    }
+  }, {
+    key: 'componentDidShow',
+    value: function componentDidShow() {
+      console.log('componentDidShow');
+    }
+  }, {
+    key: 'componentDidHide',
+    value: function componentDidHide() {
+      console.log('componentDidHide');
+    }
   }, {
     key: 'render',
     // onStartPullDownRefresh = () => {

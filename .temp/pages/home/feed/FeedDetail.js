@@ -11,27 +11,27 @@ class FeedDetail extends Taro.Component {
     navigationBarBackgroundColor: '#fff',
     navigationBarTitleText: '详情页',
     navigationBarTextStyle: 'black'
+  };
 
-    // componentWillMount () {
-    //   console.log('componentWillMount')
-    // }
+  componentWillMount() {
+    console.log('componentWillMount');
+  }
 
-  };componentDidMount() {}
-  // console.log('componentDidMount')
+  componentDidMount() {
+    console.log('componentDidMount');
+  }
 
+  componentWillUnmount() {
+    console.log('componentWillUnmount');
+  }
 
-  // componentWillUnmount () {
-  //   console.log('componentWillUnmount')
-  // }
+  componentDidShow() {
+    console.log('componentDidShow');
+  }
 
-  // componentDidShow () {
-  //   console.log('componentDidShow')
-  // }
-
-  // componentDidHide () {
-  //   console.log('componentDidHide')
-  // }
-
+  componentDidHide() {
+    console.log('componentDidHide');
+  }
 
   onBack = () => {
     Taro.navigateBack({ message: 'go back' });
@@ -81,15 +81,6 @@ class FeedDetail extends Taro.Component {
          </View> */}
       </View>;
   }
-
-  componentDidShow() {
-    super.componentDidShow && super.componentDidShow();
-  }
-
-  componentDidHide() {
-    super.componentDidHide && super.componentDidHide();
-  }
-
 }
 
 export default FeedDetail;

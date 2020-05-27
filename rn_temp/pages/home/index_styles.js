@@ -69,6 +69,9 @@ export default StyleSheet.create({
     "width": "100%",
     "fontSize": scalePx2dp(7)
   },
+  "src-pages-home-indes__red-text--_h3X6": {
+    "color": "red"
+  },
   "taro_page": {
     "height": "100%"
   }

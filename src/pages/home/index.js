@@ -5,6 +5,8 @@ import HomeBanner from '@COMPONENTS/Home/HomeBanner'
 import FeedList from '@COMPONENTS/Feed/FeedList'
 import { getWindowHeight } from '@UTILS/utils'
 import api from '@API'
+import Card from './card'
+import './indes.scss'
 
 const Mock = require('mockjs/dist/mock')
 
@@ -20,8 +22,26 @@ class Home extends Component {
   }
 
   componentDidMount() {
+    console.log('HOME--componentDidMount')
     this.getHomeBanner()
     this.getFeedList()
+  }
+
+
+  componentWillMount () {
+    console.log('HOME--componentWillMount')
+  }
+
+  componentWillUnmount () {
+    console.log('HOME--componentWillUnmount')
+  }
+
+  componentDidShow () {
+    console.log('HOME--componentDidShow')
+  }
+
+  componentDidHide () {
+    console.log('HOME--componentDidHide')
   }
 
   getHomeBanner = async () => {
@@ -106,6 +126,7 @@ class Home extends Component {
         // refresherBackground='#f50'
       >
         <HomeBanner data={bannerData} />
+        <Card my-class='red-text' />
         <FeedList feedList={feedList} clickItem={this.clickItem}>
           {this.renderTitle()}
         </FeedList>

@@ -6,6 +6,8 @@ import HomeBanner from "../../components/Home/HomeBanner";
 import FeedList from "../../components/Feed/FeedList";
 import { getWindowHeight } from "../../utils/utils";
 import api from "../../services/index";
+import Card from './card';
+import './indes.scss';
 
 const Mock = require('mockjs/dist/mock');
 
@@ -21,8 +23,25 @@ class Home extends Taro.Component {
   };
 
   componentDidMount() {
+    console.log('HOME--componentDidMount');
     this.getHomeBanner();
     this.getFeedList();
+  }
+
+  componentWillMount() {
+    console.log('HOME--componentWillMount');
+  }
+
+  componentWillUnmount() {
+    console.log('HOME--componentWillUnmount');
+  }
+
+  componentDidShow() {
+    console.log('HOME--componentDidShow');
+  }
+
+  componentDidHide() {
+    console.log('HOME--componentDidHide');
   }
 
   getHomeBanner = async () => {
@@ -92,20 +111,12 @@ class Home extends Taro.Component {
     // refresherBackground='#f50'
     >
         <HomeBanner data={bannerData} />
+        <Card my-class="red-text" />
         <FeedList feedList={feedList} clickItem={this.clickItem}>
           {this.renderTitle()}
         </FeedList>
       </ScrollView>;
   }
-
-  componentDidShow() {
-    super.componentDidShow && super.componentDidShow();
-  }
-
-  componentDidHide() {
-    super.componentDidHide && super.componentDidHide();
-  }
-
 }
 
 export default Home;
