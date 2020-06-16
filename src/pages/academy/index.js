@@ -7,6 +7,7 @@ class Academy extends Component {
   }
 
   render () {
+    console.log('1')
     return (
       <View>
         <Text>Academy 学院</Text>
